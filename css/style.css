@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&display=swap');
+
+/* vars */
+
+:root{
+    --red-color:rgb(0, 228, 228);
+    --red-color:rgb(255, 88, 88);
+}
+
+/* vars */
+
+
+*{
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+  
+}
+
+body{
+    font-family: 'IBM Plex Sans Arabic', sans-serif;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+/* header */
+
+.header{
+    background-color: #00000017;
+    min-height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px;
+    backdrop-filter: blur(5px);
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+}
+
+.header .social i{
+    color: white;
+    font-size: 18px;
+    padding-right: 25px;
+    transition: 0.3s;
+    width: 50px;
+   
+}
+
+.header .social i:hover{
+    cursor: pointer;
+    transform: rotate(5deg);
+}
+
+.header .social i.red:hover{
+    color: #ff0000;
+}
+
+.header .social i.purple:hover{
+    color: #c13584;
+}
+
+.header .social i.blue:hover{
+    color: #1877f2;
+}
+
+.header .social i.cyan:hover{
+    color: #1da1f2;
+}
+
+.header .services a{
+    margin-left: 50px;
+    text-align: center;
+    position: relative;
+}
+
+.header .services a::before{
+    content: '';
+    position: absolute;
+    background-color: var(--red-color);
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    transition: 0.4s;
+}
+
+.header .services a:hover::before{
+    width: 100%;
+    cursor: pointer;
+}
+
+.header img{
+    width: 140px;
+}
+
+/* header */
+
+/* home */
+
+.home{
+    min-height: 100vh;
+    position: relative;
+}
+
+.home video{
+   
+    max-width: 100%;
+    min-width: 100%;
+    max-height: 100%;
+    min-height: 100%;
+}
+
+.home .video{
+    position: relative;
+}
+
+.home .video::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    top: 0;
+    left: 0;
+}
+
+.home  .text{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 999;
+    color: white;
+    padding: 0 60px;
+    
+}
+
+.home  .text h2{
+    font-size: 60px;
+    color: var(--red-color)
+}
+
+
+.home  .text p{
+    width: 60%;
+    line-height: 2;
+    font-size: 20px;
+    font-weight: 500;
+
+}
+
+.home  .text button{
+    padding: 15px 45px;
+    border-radius: 7px;
+    border: 2px solid var(--red-color);
+    transition: 0.4s;
+    background: transparent;
+}
+
+.home  .text button:hover{
+    
+    background-color: var(--red-color);
+}
+
+.home  .text button a{
+    color: white;
+    font-size: 25px;
+    transition: 0.4s;
+}
+
+.home  .text button:hover a{
+    color: #111;
+}
+
+/* home */
+
+
