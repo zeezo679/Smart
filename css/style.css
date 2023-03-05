@@ -5,6 +5,9 @@
 :root{
     --red-color:rgb(0, 228, 228);
     --red-color:rgb(255, 88, 88);
+    --red-alt-color:rgb(255, 42, 42);
+    --ptop:70px;
+    --pbottom:70px;
 }
 
 /* vars */
@@ -30,10 +33,55 @@ a{
     color: white;
 }
 
+ul{
+    list-style: none;
+}
+
+.container{
+    padding: 90px;
+}
+
+.main-heading{
+    text-transform: uppercase;
+    margin: 30px auto;
+    font-size: 30px;
+    width: fit-content;
+    position: relative;
+    z-index: 1;
+    padding: 0 60px;
+    color: rgb(0, 0, 0);
+    border: 1px solid var(--red-alt-color);
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+
+.main-heading::after{
+    content: '';
+    position: absolute;
+    background-color: var(--red-alt-color);
+    width: 0;
+    right: 0;
+    top: 0;
+    height: 100%;
+    transition: 0.3s;
+    z-index: -1;
+}
+
+.main-heading:hover:after {
+    width: 100%;
+}
+
+.main-heading:hover{
+    color: white;
+}
+
 /* header */
 
 .header{
-    background-color: #00000017;
+    background-color: #0000006e;
     min-height: 10vh;
     display: flex;
     justify-content: space-between;
@@ -45,13 +93,26 @@ a{
     width: 100%;
 }
 
+
+
+.header .links i{
+    color: white;
+}
+
+
+
 .header .social i{
     color: white;
     font-size: 18px;
     padding-right: 25px;
     transition: 0.3s;
     width: 50px;
-   
+}
+
+@media (max-width:767px){
+    .header .social i{
+        margin-top: 10px;
+    }
 }
 
 .header .social i:hover{
@@ -75,30 +136,93 @@ a{
     color: #1da1f2;
 }
 
-.header .services a{
-    margin-left: 50px;
-    text-align: center;
+.header .nav{
+    width: 40%;
+}
+
+.header .nav ul{
+    display: flex;
+    justify-content: space-between;
+}
+
+@media (max-width:767px){
+
+    .header .nav{
+        height: 15px;
+    }
+
+    .header .nav ul{
+        display: none;
+        flex-direction: column;
+        background-color: red;
+        top: 50px;
+        width: 231px;
+        height: 382px;
+        text-align: 20px;
+        left: 70px;
+        position: absolute;
+        padding: 20px;
+        z-index: 999;
+    }
+
+
+
+}
+
+.header .nav ul li{
     position: relative;
 }
 
-.header .services a::before{
+.header .nav ul li::before{
     content: '';
     position: absolute;
-    background-color: var(--red-color);
     width: 0;
-    height: 2px;
+    height: 3px;
+    background-color: var(--red-color);
     bottom: -5px;
+    right: 0;
     transition: 0.4s;
 }
 
-.header .services a:hover::before{
+.header .nav ul li:hover::before{
     width: 100%;
-    cursor: pointer;
 }
+
+.header .nav i{
+    color: white;
+    display: flex;
+    justify-content: center;
+    width: 50px;
+    margin: auto;
+    font-size: 25px;
+}
+
+@media (min-width:767px){
+    .header .nav i{
+        display: none;
+    }
+
+    .header .nav i:hover + ul{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.header .nav i:hover + ul{
+    display: flex;
+}
+
+
+
+
+
+
 
 .header img{
     width: 140px;
 }
+
+
 
 /* header */
 
@@ -107,52 +231,70 @@ a{
 .home{
     min-height: 100vh;
     position: relative;
+    background: url("/images/pexels-revac-film\'s&photography-229047.jpg");
+    background-position: center;
+    background-size: cover;
 }
 
-.home video{
-   
-    max-width: 100%;
-    min-width: 100%;
-    max-height: 100%;
-    min-height: 100%;
-}
 
-.home .video{
-    position: relative;
-}
-
-.home .video::after{
+.home::before{
     content: '';
-    position: absolute;
+    background-color: rgba(0, 0, 0, 0.823);
+    left: 0;
+    top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
-    top: 0;
-    left: 0;
+    position: absolute;
 }
+
 
 .home  .text{
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    z-index: 999;
+    z-index: 998;
     color: white;
     padding: 0 60px;
+    width: 100%;
     
+}
+
+@media (max-width:767px){
+    .home  .text{
+        text-align: center;
+    } 
 }
 
 .home  .text h2{
     font-size: 60px;
-    color: var(--red-color)
+    color: var(--red-color);
+    width: 100%;
 }
 
+@media (max-width:767px){
+    .home  .text h2{
+        font-size: 50px;
+    }
+}
 
 .home  .text p{
     width: 60%;
     line-height: 2;
     font-size: 20px;
     font-weight: 500;
+    width: 55%;
+}
 
+@media (max-width:767px) {
+    .home .text p{
+        line-height: 2;
+        font-size: 18px;
+        font-weight: 500;
+        width: 100%;
+        /* height: 86px; */
+        font-size: 16px;
+        text-align: center;
+    }
 }
 
 .home  .text button{
@@ -180,4 +322,140 @@ a{
 
 /* home */
 
+/* port */
 
+.port{
+   min-height: 100vh;
+
+}
+
+.port .main-heading h2{
+    text-align: center;
+}
+
+.port .container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 50px;
+    
+}
+
+.port .container .box{
+    background-color: #ffffff;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.331);
+    border-radius: 10px;
+    text-align: center;
+    height: 700px;
+}
+
+.port .image{
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.port .image.red::after{
+    content: '';
+    background-color: rgba(255, 0, 0, 0.226);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height:99%;
+}
+
+.port .image.green::after{
+    content: '';
+    background-color: rgba(0, 233, 159, 0.226);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height:99%;
+}
+
+.port .image.blue::after{
+    content: '';
+    background-color: rgba(47, 113, 255, 0.226);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height:99%;
+}
+
+
+.port .image::before{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border-style: solid;
+    border-width: 0px 0px 170px 500px;
+    border-color: transparent transparent white transparent;
+    transition: 0.3s;
+    z-index: 333;
+}
+
+.port .box:hover .image::before{
+    border-width: 0px 500px 170px 500px;
+}
+
+
+
+.port .box h2{
+    font-size: 30px;
+    margin-top: 30px;
+    position: relative;
+    width: fit-content;
+    margin: auto;
+
+}
+
+.port .box  h2.red::after{
+    content: '';
+    position: absolute;
+    width: 70%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--red-alt-color);
+    height: 4px;
+    width: 90%;
+    top: 40px;
+    
+}
+
+.port .box  h2.green::after{
+    content: '';
+    position: absolute;
+    width: 70%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgb(0, 233, 159);
+    height: 4px;
+    width: 90%;
+    top: 40px;
+    
+}
+
+
+.port .box  h2.blue::after{
+    content: '';
+    position: absolute;
+    width: 70%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgb(47, 113, 255);
+    height: 4px;
+    width: 90%;
+    top: 40px;
+    
+}
+
+
+.port img{
+    width: 100%;
+    height: 50%;
+}
+/* port */
