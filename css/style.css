@@ -274,7 +274,7 @@ ul{
 .home{
     min-height: 100vh;
     position: relative;
-    background: url("images/pexels-revac-film\'s&photography-229047.jpg");
+    background: url("../images/pexels-revac-film\'s&photography-229047.jpg");
     background-position: center;
     background-size: cover;
 }
@@ -793,7 +793,7 @@ ul{
 
 .team{
     min-height: 50vh;
-    background: url("images/pexels-vlad-alexandru-popa-1402787.jpg");
+    background: url("../images/pexels-vlad-alexandru-popa-1402787.jpg");
     padding: 50px;
     background-size: cover;
     position: relative;
