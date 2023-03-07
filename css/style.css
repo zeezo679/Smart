@@ -80,7 +80,8 @@ ul{
 
 @media (max-width:767px){
     .main-heading{
-        padding: 0;
+        padding: 0 20px;
+        font-size: 30px;
     }
 }
 
@@ -125,7 +126,9 @@ ul{
     color: white;
 }
 
-
+.header .social{
+    cursor: pointer;
+}
 
 .header .social i{
     color: white;
@@ -133,7 +136,10 @@ ul{
     padding-right: 25px;
     transition: 0.3s;
     width: 50px;
+    cursor: pointer;
 }
+
+
 
 @media (max-width:767px){
     .header .social i{
@@ -171,7 +177,7 @@ ul{
     justify-content: space-between;
 }
 
-@media (max-width:767px){
+@media (max-width:1267px){
 
     .header .nav{
         height: 15px;
@@ -182,13 +188,14 @@ ul{
         flex-direction: column;
         background-color: rgba(0, 0, 0, 0.819);
         backdrop-filter: blur(3);
-        top: 50px;
+        top: 80px;
         width: 231px;
         height: 382px;
         text-align: 20px;
-        left: 70px;
+        left: 50%;
+        transform: translateX(-50%);
         position: absolute;
-       padding: 25px;
+         padding: 25px;
         z-index: 999;
         text-align: center;
         overflow: hidden;
@@ -229,12 +236,11 @@ ul{
     color: white;
     display: flex;
     justify-content: center;
-    width: 50px;
-    margin: auto;
+    margin-right: 20px;
     font-size: 25px;
 }
 
-@media (min-width:767px){
+@media (min-width:1267px){
     .header .nav i{
         display: none;
     }
@@ -570,7 +576,7 @@ ul{
 @media (max-width:992px) and (min-width:467px){
     .our-services .container{
         margin: auto;
-        width: 380px;
+        width: 680px;
     }
 }
 
@@ -585,7 +591,7 @@ ul{
 
 @media (max-width:767px){
     .our-services .container .box{
-        left: 43px;
+        left: 54px;
         width: 325px;
     }
 }
@@ -628,6 +634,8 @@ ul{
     color: #ff432a;
     font-size: 60px;
 }
+
+
 
 .our-services .container .box p{
     font-size: 30px;
@@ -692,12 +700,11 @@ ul{
 
 
 @media (max-width:992px) and (min-width:467px){
-    .testimonials .container{
+    .our-services .container{
         margin: auto;
-        width: 400px;
+        width: 680px;
     }
 }
-
 .testimonials .box{
     background-color: #eee;
     padding: 10px 20px;
@@ -712,7 +719,7 @@ ul{
 @media (max-width:767px) {
     .testimonials .box{
          width: 321px;
-         margin-right: -42px;
+         margin-right: -54px;
          text-align: center;
     }
 }
@@ -781,3 +788,137 @@ ul{
 
 }
 /* testimonials */
+
+/* team */
+
+.team{
+    min-height: 50vh;
+    background: url("/images/pexels-vlad-alexandru-popa-1402787.jpg");
+    padding: 50px;
+    background-size: cover;
+    position: relative;
+    /* z-index: -1; */
+}
+
+.team::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.855);
+    width: 100%;
+    height: 100%;
+    
+}
+
+.team .container{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+    gap: 30px;
+    z-index: 999;
+}
+
+.team img{
+    width: 120px;
+    height: 120px;
+    background-color: white;
+    border-radius: 50%;
+    padding: 20px;
+    transition: 0.3s;
+    z-index: 4;
+}
+
+.team img:hover{
+    box-shadow: 0 0 10px 2px white;
+    margin-top: -5px;
+    transform: rotate(5deg);
+}
+
+/* team */
+
+/* contact */
+
+.contact{
+    min-height: 70vh;
+    position: relative;
+    background-color: #222;
+    color: white;
+}
+
+
+.contact .container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 150px;
+}
+
+
+@media (max-width:767px) {
+    .contact .container{
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 150px;
+        text-align: center;
+    }
+}
+
+
+.contact .container .right{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.contact .container p{
+    color: #ddd;
+    transition: 0.4s;
+}
+
+
+.contact .container p:hover{
+    color: white;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.contact .container .left{
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+    flex-direction: column;
+}
+
+.contact .container .left .bottom{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+
+.contact .container .left .bottom img , .contact .container .left .bottom  i{
+    width: 32px;
+    color: white;
+}
+
+@media (max-width:767px){
+    .contact .container .left .bottom img , .contact .container .left .bottom  i{
+        width: 32px;
+        color: white;
+        margin-right: 20px;
+    }
+}
+
+.contact .container .left .bottom i{
+    font-size: 30px;
+}
+
+.contact .container .left .bottom img.mada{
+    background-color: white;
+    width: 40px;
+    height: 40px;
+}
+/* contact */
